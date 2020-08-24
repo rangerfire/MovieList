@@ -78,6 +78,7 @@ function getList(x) {
     page = x;
     let action = 'movie/popular?api_key=';
     let thisurl = "".concat(pageBaseURL, action, apiKey, lang, '&page=', page);
+    console.log(thisurl);
     fetch(thisurl)
     .then((res) => {
         return res.json();
