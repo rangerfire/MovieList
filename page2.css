@@ -292,7 +292,7 @@ section {
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    border: 2px solid;
+    /* border: 2px solid; */
     /*below are for rotate*/
     perspective: 10000px;
     -webkit-perspective: 10000px;

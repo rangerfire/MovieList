@@ -85,7 +85,7 @@ function getList(x) {
     })
     .then((myData) => {
         pageData = myData;
-        // console.log(pageData);
+        console.log(pageData);
         //have got the data, the 20 movies are in 'results' array => show it in the page
         let len = myData.results.length;
         //befor updating, remove the loading gif
@@ -100,6 +100,7 @@ function getList(x) {
             let thisname = names[i];
             let thisdate = dates[i];
             let thisURL = "".concat(imageBaseURL, posterSize, myData.results[i].poster_path);
+            // console.log(thisURL);
             //for each movie in this page, set the css style first!--------------------               
             thismovie.style.flexBasis = "16vw";
             thismovie.style.display = "flex";
