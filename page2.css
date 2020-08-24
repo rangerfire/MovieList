@@ -87,6 +87,8 @@ main {
     perspective: 10000px;
     -webkit-perspective: 10000px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+    -moz-backface-visibility: hidden;
     transition: all 1s;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -305,6 +307,8 @@ section {
     perspective: 10000px;
     -webkit-perspective: 10000px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+    -moz-backface-visibility: hidden;
     transition: all 1s;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
