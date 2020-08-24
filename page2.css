@@ -3,15 +3,8 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* html {
-    width: 100%;
-    height: 100%;
-} */
-
 body {
-    /* width: 90%; */
     width: 90vw;
-    /* height: 100%; */
     margin: auto;
 }
 .main_page {
@@ -34,11 +27,8 @@ nav {
     /* border: 1px solid red; */
 }
 .nav1, .nav2, .nav3 {
-    /* width: 8%;
-    height: 100%; */
     width: 8vw;
-    /* font-size: 150%; */
-    font-size: 3vh;
+    font-size: 1.5vw;
     position: relative;
     /* border: 1px solid; */
 }
@@ -49,15 +39,14 @@ nav {
 .MovieList, .LikedList {
     position: absolute;
     right: 0;
-    bottom: 1vh;
+    bottom: 0.5vh;
     cursor: pointer;
-    /* border: 1px solid; */
+    /* border: 1px solid red; */
 }
 .underline {
     position: absolute;
     display: none;
-    /* top: 1vh; */
-    bottom: -4vh;
+    bottom: calc(-1.5vw - 0.5vh);         /*same as font size + bottom*/
     width: 100%;
     height: 0.5vh;
     background-color: red;
@@ -124,23 +113,26 @@ aside {
 }
 .prev {
     height: 3vh;
+    font-size: 2vh;
     position: absolute;
-    left: 10vw;
+    left: 7vw;
     top: 0;
     z-index: 2;
 }
 .pageInfo {
+    font-size: 3vh;
+    font-weight: 600;
+    padding: 0.2vh;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    font-weight: 600;
-    font-size: x-large;
 }
 .next {
     height: 3vh;
+    font-size: 2vh;
     position: absolute;
-    right: 10vw;
+    right: 7vw;
     top: 0;
 }
 section {
@@ -230,7 +222,6 @@ section {
     border: 1px solid green;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* opacity: 0.5; */
 
     display: flex;
     align-items: center;
@@ -307,7 +298,7 @@ section {
     perspective: 10000px;
     -webkit-perspective: 10000px;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;    /* Safari */
     -moz-backface-visibility: hidden;
     transition: all 1s;
     -webkit-transition: all 1s;
