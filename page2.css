@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* html {
+    width: 100%;
+    height: 100%;
+} */
+
+body {
+    /* width: 90%; */
+    width: 90vw;
+    /* height: 100%; */
+    margin: auto;
+}
+.main_page {
+    /* display: none; */
+    margin-top: 10px;
+    position: relative;
+
+    /* for rotate */
+    perspective: 10000px;        
+    -webkit-perspective: 10000px;
+}
+
+nav {
+    width: 100%;
+    /* height: 10%; */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    /* border: 1px solid red; */
+}
+.nav1, .nav2, .nav3 {
+    /* width: 8%;
+    height: 100%; */
+    width: 8vw;
+    /* font-size: 150%; */
+    font-size: 3vh;
+    position: relative;
+    /* border: 1px solid; */
+}
+.nav1 img {
+    width: 100%;
+    height: 100%;
+}
+.MovieList, .LikedList {
+    position: absolute;
+    right: 0;
+    bottom: 1vh;
+    cursor: pointer;
+    /* border: 1px solid; */
+}
+.underline {
+    position: absolute;
+    display: none;
+    /* top: 1vh; */
+    bottom: -4vh;
+    width: 100%;
+    height: 0.5vh;
+    background-color: red;
+    border-radius: 40%;
+}
+.ListNumber {
+    /* display: none; */
+    position: absolute;
+    top: -2vh;
+    right: -1vw;
+    height: 2.5vh;
+
+    background-color: red;
+    border-radius: 30%;
+    color: white;
+    font-size: 2.3vh;
+}
+.line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+}
+main {
+    width: 100%;
+    /* border: 2px solid; */
+    /*for rotate*/
+    perspective: 10000px;
+    -webkit-perspective: 10000px;
+    backface-visibility: hidden;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    
+}
+footer {
+    width: 100%;
+    height: 2vh;
+}
+.loading {
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/loading.gif");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    z-index: 99;
+    display: none;
+}
+h1 {
+    font-size: 5vh;
+}
+aside {
+    width: 100%;
+    height: 6vh;
+    /* border: 1px solid red; */
+    text-align: center;  
+    position: relative; 
+}
+.prev {
+    height: 3vh;
+    position: absolute;
+    left: 10vw;
+    top: 0;
+    z-index: 2;
+}
+.pageInfo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-weight: 600;
+    font-size: x-large;
+}
+.next {
+    height: 3vh;
+    position: absolute;
+    right: 10vw;
+    top: 0;
+}
+section {
+    width: 100%;
+    /* border: 1px solid green; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* .movie {
+    flex-basis: 16vw;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid tomato;
+} */
+/* .poster {
+    position: relative;
+    flex-basis: 47vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 2px solid red;
+} */
+.likeIcon {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 45%;
+    height: 30%;
+    background: url("img/like.jpg");
+    background-position: right;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: 0;
+    border-radius: 0 0 0 30%;
+    transition: 0.75s;
+}
+.poster:hover {
+    cursor: pointer;
+}
+.poster:hover .likeIcon {
+    cursor: default;
+    opacity: 0.75;
+}
+.name {
+    /* max-width: 16vw; */
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+
+
+/*------------------------------below is for the movie detail page-----------------------------------------*/
+.MovieDetailPage {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.MDClose {
+    position: absolute;
+    top: -7vh;
+    right: 5vh;
+    width: 3vw;
+    height: 6vh;
+    background-image: url("img/close2.png");
+    background-size: 100% 100%;
+    /* border: 1px solid green; */
+}
+.MDClose:hover {
+    cursor: pointer;
+}
+.MDBack {
+    width: 85vw;
+    height: 80vh;
+    border: 1px solid green;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.MDPoster {
+    width: 25vw;
+    height: 70vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* border: 1px solid tomato; */
+}
+.MDInfo {
+    width: 50vw;
+    height: 70vh;
+    /* border: 1px solid tomato; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.MDInfo>* {
+    width: 90%;
+    margin: 2vh 0;
+}
+.MDName {
+    margin-top: 7.5vh;
+    font-size: 5vh;
+    font-weight: bold;
+}
+.MDCategory {
+    font-size: 2vh;
+}
+.MDCategory * {
+    border-radius: 5px;
+    margin-right: 1vw;
+    padding: 0.2vw;
+}
+.MDOverview {
+    font-size: 2vh;
+}
+.MDProducer {
+    flex-basis: 30%;
+    background-color: rgba(190, 190, 190 , 0.9);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.MDProducer * {
+    margin-right: 0.5vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/*------------------------------above is for the movie detail page-----------------------------------------*/
+
+
+/*------------------------------below is for the Liked List page-----------------------------------------*/
+.LikedListPage {
+    position: absolute;
+    top: 17vh;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    /* border: 2px solid; */
+    /*below are for rotate*/
+    perspective: 10000px;
+    -webkit-perspective: 10000px;
+    backface-visibility: hidden;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transform: rotateY(-180deg);           /* 这里 */
+    -webkit-transform: rotateY(-180deg);
+    
+}
+/*in js file, liked movies should be put in the same name div !!!!!!!!!!!*/
+.LikedMovie {
+    position: relative;
+    flex-basis: 13vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+.LMPoster {
+    position: relative;
+    flex-basis: 40vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.LMName {
+    max-width: 13vw;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    margin: auto;
+}
+.LMDate {
+    margin: auto;
+}
+.ConfigButton {
+    position: absolute;
+    right: 0;
+    top: -12vh;
+    width: 5vw;
+    height: 7vh;
+    background-image: url("img/change-button.jpg");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.ConfigPage {
+    position: absolute;
+    width: 90%;
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20vh;
+}
+.CPMovieName {
+    flex-basis: 5vh;
+    width: 50%;
+    margin-bottom: 1vh;
+    border-radius: 10px;
+    background-color: grey;
+    text-align: center;
+    line-height: 5vh;
+}
+.CloseButton {
+    position: absolute;
+    top: -15vh;
+    right: 5vw;
+    width: 8vw;
+    height: 15vh;
+    background-image: url("img/Close-icon-31.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+/*------------------------------below is for the Liked List page-----------------------------------------*/
